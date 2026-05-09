@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://c501skqn12a77"]
+
+[ext_resource type="Script" uid="uid://pn0shbugc2l" path="res://Scenes/raindrop.gd" id="1_7yiau"]
+[ext_resource type="Texture2D" uid="uid://d3s2xpem51vpj" path="res://Assets/raindrop.png" id="1_ld1sl"]
+[ext_resource type="Texture2D" uid="uid://d3njayfoyhsju" path="res://Assets/water_particle.png" id="3_nv2n2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7yiau"]
+radius = 5.0
+height = 32.0
+
+[sub_resource type="Curve" id="Curve_nv2n2"]
+_data = [Vector2(0, 0.34831464), 0.0, -0.40685973, 0, 0, Vector2(1, 0.056179762), -0.22471957, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_2gt56"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Gradient" id="Gradient_p52di"]
+colors = PackedColorArray(1, 1, 1, 0.2, 0.74, 0.74, 0.74, 0)
+
+[node name="RaindropArea" type="Area2D"]
+script = ExtResource("1_7yiau")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_ld1sl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_7yiau")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+self_modulate = Color(0.7001688, 1.1801987, 1.0601912, 1)
+show_behind_parent = true
+position = Vector2(0, 10)
+amount = 72
+texture = ExtResource("3_nv2n2")
+lifetime = 0.8
+gravity = Vector2(0, 30)
+scale_amount_min = 0.6
+scale_amount_max = 0.6
+split_scale = true
+scale_curve_x = SubResource("Curve_nv2n2")
+scale_curve_y = SubResource("Curve_2gt56")
+color_ramp = SubResource("Gradient_p52di")

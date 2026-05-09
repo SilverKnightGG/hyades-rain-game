@@ -1,0 +1,137 @@
+[gd_scene load_steps=14 format=3 uid="uid://dgx12se6gk3f3"]
+
+[ext_resource type="Script" uid="uid://ipdjum7mgw7n" path="res://Scenes/meadow.gd" id="1_a1lbd"]
+[ext_resource type="Texture2D" uid="uid://n3wpfksfpc2p" path="res://Assets/asphodel_field.png" id="2_4hovy"]
+[ext_resource type="Texture2D" uid="uid://cfkqtx70rn4ky" path="res://Assets/greek_column.png" id="3_a2k08"]
+[ext_resource type="Script" uid="uid://bnxvo7574mqqg" path="res://Scenes/moving_vase.gd" id="4_hohi1"]
+[ext_resource type="Shader" uid="uid://bhrwi0weofu6m" path="res://Scenes/vase_fill_shader.gdshader" id="5_a2k08"]
+[ext_resource type="Texture2D" uid="uid://dbqpnd6mm0x8t" path="res://Assets/greek_vase.png" id="5_x36ke"]
+[ext_resource type="Texture2D" uid="uid://d3njayfoyhsju" path="res://Assets/water_particle.png" id="6_4hovy"]
+[ext_resource type="Texture2D" uid="uid://bmk1oyiyuii7d" path="res://Assets/vase_fill_glow.png" id="6_hohi1"]
+[ext_resource type="Script" uid="uid://y3glbq2xf6jo" path="res://Scenes/water_pour_raycast.gd" id="9_x36ke"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6j5ir"]
+size = Vector2(64, 777)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hohi1"]
+shader = ExtResource("5_a2k08")
+shader_parameter/progress = 0.0
+shader_parameter/fill_texture = ExtResource("6_hohi1")
+shader_parameter/glow_color = Color(0, 1.0549624, 1.6051315, 0.96862745)
+shader_parameter/glow_amount = 0.6099999900906
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6j5ir"]
+
+[sub_resource type="Gradient" id="Gradient_a2k08"]
+colors = PackedColorArray(1, 1, 1, 0.6862745, 1, 1, 1, 0)
+
+[node name="AsphodelMeadow" type="Node2D"]
+script = ExtResource("1_a1lbd")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="GroundCollision" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(31, 0)
+polygon = PackedVector2Array(235, 513, 277, 507, 369, 489, 441, 487, 493, 487, 562, 486, 606, 490, 672, 500, 722, 497, 773, 495, 844, 482, 862, 486, 900, 494, 978, 494, 1018, 494, 1053, 498, 1087, 502, 1106, 503, 1127, 516, 1131, 648, -35, 653, -34, 492, 6, 494, 27, 498, 58, 511, 95, 511, 129, 511, 167, 513, 203, 516)
+
+[node name="Line2D" type="Line2D" parent="StaticBody2D"]
+texture_repeat = 2
+position = Vector2(32, -35)
+points = PackedVector2Array(-47, 493, 6, 494, 26, 497, 52, 507, 70, 511, 111, 511, 134, 511, 175, 513, 204, 517, 236, 513, 286, 506, 327, 497, 369, 490, 432, 488, 495, 487, 535, 485, 567, 486, 604, 491, 649, 497, 682, 499, 725, 497, 756, 495, 777, 494, 817, 486, 845, 482, 871, 487, 900, 494, 941, 494, 984, 496, 1020, 494, 1057, 499, 1090, 503, 1107, 503, 1140, 504)
+width = 128.0
+texture = ExtResource("2_4hovy")
+texture_mode = 1
+
+[node name="column" type="StaticBody2D" parent="."]
+position = Vector2(113, 221)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="column"]
+position = Vector2(0, 57.5)
+shape = SubResource("RectangleShape2D_6j5ir")
+
+[node name="Sprite2D" type="Sprite2D" parent="column"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_a2k08")
+
+[node name="column2" type="StaticBody2D" parent="."]
+position = Vector2(1044, 221)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="column2"]
+position = Vector2(0, 57.5)
+shape = SubResource("RectangleShape2D_6j5ir")
+
+[node name="Sprite2D" type="Sprite2D" parent="column2"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_a2k08")
+
+[node name="Vase" type="RigidBody2D" parent="."]
+position = Vector2(542, 429)
+mass = 0.9
+center_of_mass_mode = 1
+center_of_mass = Vector2(0, 50)
+script = ExtResource("4_hohi1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Vase"]
+visible = false
+polygon = PackedVector2Array(10, 48, -9, 48, -15, 43, -20, 34, -23, 25, -23, 13, -20, 2, -13, -5, -10, -19, -13, -35, 13, -35, 10, -19, 13, -5, 20, 2, 23, 13, 23, 25, 20, 34, 15, 43)
+
+[node name="VaseSprite" type="Sprite2D" parent="Vase"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_hohi1")
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_x36ke")
+
+[node name="CatchArea" type="Area2D" parent="Vase"]
+unique_name_in_owner = true
+position = Vector2(0, -17)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Vase/CatchArea"]
+visible = false
+position = Vector2(0, -8)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_6j5ir")
+
+[node name="SpillParticles" type="CPUParticles2D" parent="Vase"]
+unique_name_in_owner = true
+z_index = 1
+position = Vector2(0, -36)
+emitting = false
+texture = ExtResource("6_4hovy")
+lifetime = 0.6
+one_shot = true
+explosiveness = 0.65
+direction = Vector2(0, 0)
+spread = 20.0
+scale_amount_min = 0.2
+scale_amount_max = 0.3
+color_ramp = SubResource("Gradient_a2k08")
+
+[node name="PourCast" type="RayCast2D" parent="Vase"]
+unique_name_in_owner = true
+position = Vector2(0, -32)
+enabled = false
+target_position = Vector2(0, 300)
+collide_with_areas = true
+collide_with_bodies = false
+script = ExtResource("9_x36ke")
+
+[node name="GroundSplashArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="GroundCollision2" type="CollisionPolygon2D" parent="GroundSplashArea"]
+position = Vector2(31, 8)
+polygon = PackedVector2Array(235, 513, 277, 507, 369, 489, 441, 487, 493, 487, 562, 486, 606, 490, 672, 500, 722, 497, 773, 495, 844, 482, 862, 486, 900, 494, 978, 494, 1018, 494, 1053, 498, 1087, 502, 1106, 503, 1127, 516, 1131, 648, -35, 653, -34, 492, 6, 494, 27, 498, 58, 511, 95, 511, 129, 511, 167, 513, 203, 516)
+
+[node name="RainRect" type="ReferenceRect" parent="."]
+unique_name_in_owner = true
+offset_left = 145.0
+offset_top = -113.0
+offset_right = 1011.0
+offset_bottom = -28.0
+
+[node name="RainTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+
+[connection signal="area_entered" from="Vase/CatchArea" to="Vase" method="_on_catch_rain"]
+[connection signal="area_entered" from="GroundSplashArea" to="." method="_on_ground_splash_area_area_entered"]
+[connection signal="timeout" from="RainTimer" to="." method="_on_rain_timer_timeout"]
