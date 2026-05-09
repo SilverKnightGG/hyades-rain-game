@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dunxhy4saddue"]
+
+[ext_resource type="Script" uid="uid://b1rfyvurghrpa" path="res://Scenes/hyas_soul_flower.gd" id="1_fexay"]
+[ext_resource type="Texture2D" uid="uid://cr73pcdnjnwbs" path="res://Assets/large_asphodel_flower.png" id="2_dmpte"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hywda"]
+size = Vector2(100, 24)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_6nvx3"]
+
+[node name="HyasSoulFlower2" type="Area2D"]
+script = ExtResource("1_fexay")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(9, 55)
+shape = SubResource("RectangleShape2D_hywda")
+
+[node name="FlowerLine" type="Line2D" parent="."]
+self_modulate = Color(0.77, 0.6285767, 0.5467, 1)
+clip_children = 2
+points = PackedVector2Array(10, 63, 9.6, 60, 50, 46, 65, 28, 68, 5, 58, -15, 44, -33, 18, -34, 3, -25, -8, -14, -18, 16, -30, 32, -37, 44, -43, 47, -55, 57)
+width = 128.0
+texture = ExtResource("2_dmpte")
+texture_mode = 1
+
+[node name="OverColor" type="ColorRect" parent="FlowerLine"]
+material = SubResource("CanvasItemMaterial_6nvx3")
+offset_left = -136.0
+offset_top = -208.0
+offset_right = 182.0
+offset_bottom = 102.0
+color = Color(0.24000001, 0.19392002, 0.16320002, 0.50980395)

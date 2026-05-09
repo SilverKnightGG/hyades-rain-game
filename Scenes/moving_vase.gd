@@ -11,7 +11,7 @@ const SUSTAIN_ANGLE_FULL = 8.0
 const SUSTAIN_ANGLE_EMPTY = 90.0
 const SUSTAIN_SPILL_RATE = 2.0      # water per second
 
-# Motion boost (optional)
+# Motion boost
 const MOTION_BOOST_FACTOR = 0.005    # adds faux degrees per unit velocity
 
 const ACCELERATION_POUR_THRESHOLD: float = 0.3
@@ -66,7 +66,6 @@ func _check_spill(delta: float):
     var motion_boost = abs(linear_velocity.x) * MOTION_BOOST_FACTOR
     var effective_angle = current_angle + motion_boost
 
-    # --- Instant spill (high angle) ---
     var instant_threshold = lerp(SPILL_ANGLE_MAX, SPILL_ANGLE_MIN, water_ratio)
     if effective_angle > instant_threshold:
         var excess = effective_angle - instant_threshold
@@ -78,7 +77,6 @@ func _check_spill(delta: float):
             _spill_amount(spill_amount, true)
             return
 
-    # --- Sustained low‑angle spill ---
     var sustain_threshold = lerp(SUSTAIN_ANGLE_EMPTY, SUSTAIN_ANGLE_FULL, water_ratio)
     if current_angle > sustain_threshold:
         var spill_amount = SUSTAIN_SPILL_RATE * delta
@@ -88,19 +86,6 @@ func _check_spill(delta: float):
             return
 
     _spill_amount(0.0, false)
-
-
-
-#func _check_spill(rate: float):
-    #var half_full: float = VASE_FULL / 2.0
-    #var spill_resistance: float = (half_full + VASE_FULL) / water
-    #var motion = rate * INERTIA_DAMPENED
-#
-    #var tilt_effect = abs(motion / rotation_degrees if (rotation_degrees < 0.0 and motion < 0.0) or (rotation_degrees < 0.0 and motion < 0.0) else motion * rotation_degrees)
-    #var spill_threshold = ANGLE_LOW_THRESHOLD + (VASE_FULL - water) / ANGLE_MULT
-#
-    #if tilt_effect > spill_threshold * spill_resistance:
-        #_spill_amount(min(tilt_effect - spill_threshold, water))
 
 
 func _on_catch_rain(area: Area2D):
@@ -133,7 +118,9 @@ func _spill_amount(amount: float = 0.0, force_spill: bool = false):
     var last_amount: float = water
     water = clampf(water - amount, 0.0, VASE_FULL)
 
+    %PourCast.force_raycast_update()
     if %PourCast.is_colliding():
+        prints("is colliding")
         var pouring_amount: float = last_amount - water
         if pouring_amount:
             pouring_on_flower.emit(pouring_amount)

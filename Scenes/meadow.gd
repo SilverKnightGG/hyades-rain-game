@@ -7,6 +7,8 @@ const MAX_INTERVAL: float = 1.1
 
 
 func _on_ground_splash_area_area_entered(area: Area2D) -> void:
+    if area.name == "HyasSoulFlower":
+        return
     _splash(area.global_position)
     area.queue_free()
 
