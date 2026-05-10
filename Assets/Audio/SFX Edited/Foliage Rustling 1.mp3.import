@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b6mpo8utdidi6"
+path="res://.godot/imported/Foliage Rustling 1.mp3-ca4918787467e8dd6f3d423a845ac10b.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX Edited/Foliage Rustling 1.mp3"
+dest_files=["res://.godot/imported/Foliage Rustling 1.mp3-ca4918787467e8dd6f3d423a845ac10b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bbg7kyopfqgy1"
+path="res://.godot/imported/Splash 3.mp3-b5aa73316f9198edd5f7058b0f95513e.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX Edited/Splash 3.mp3"
+dest_files=["res://.godot/imported/Splash 3.mp3-b5aa73316f9198edd5f7058b0f95513e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cus6dveyvydo4"
+path="res://.godot/imported/Pour Medium.mp3-bbb549d2db87da06b309c732c9aa09a9.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX Edited/Pour Medium.mp3"
+dest_files=["res://.godot/imported/Pour Medium.mp3-bbb549d2db87da06b309c732c9aa09a9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

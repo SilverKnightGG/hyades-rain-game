@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://btsdotbd8o2af"
+path="res://.godot/imported/Pour Short.mp3-ee6c772988fc4e57b624538d97da51dc.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX Edited/Pour Short.mp3"
+dest_files=["res://.godot/imported/Pour Short.mp3-ee6c772988fc4e57b624538d97da51dc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
