@@ -120,7 +120,6 @@ func _spill_amount(amount: float = 0.0, force_spill: bool = false):
 
     %PourCast.force_raycast_update()
     if %PourCast.is_colliding():
-        prints("is colliding")
         var pouring_amount: float = last_amount - water
         if pouring_amount:
             pouring_on_flower.emit(pouring_amount)
@@ -170,3 +169,7 @@ func _alter_pour_cast_angle():
     var pour_down: float = Vector2.RIGHT.angle()
 
     %PourCast.global_rotation = (global_rotation + accel_ratio * MAX_POUR_ANGLE_RAD) if abs(accel_ratio) > ACCELERATION_POUR_THRESHOLD else pour_down
+
+
+func _on_playing():
+    pouring_on_flower.connect(Game.hyas_flower._on_watered)

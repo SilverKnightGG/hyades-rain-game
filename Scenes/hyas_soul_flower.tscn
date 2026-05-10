@@ -1,0 +1,165 @@
+[gd_scene load_steps=9 format=3 uid="uid://bwthjoy1pdvsn"]
+
+[ext_resource type="Script" uid="uid://b1rfyvurghrpa" path="res://Scenes/hyas_soul_flower.gd" id="1_f88pd"]
+[ext_resource type="Texture2D" uid="uid://cr73pcdnjnwbs" path="res://Assets/large_asphodel_flower.png" id="2_jv3d8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hywda"]
+size = Vector2(262, 24)
+
+[sub_resource type="Animation" id="Animation_pvu6h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:points")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedVector2Array(10, 62, 9.660812, 47.75421, 9, 20, 10.283188, -3.6922302, 10.387848, -27.971497, 10.470581, -47.16568, 10.541122, -63.532654, 10.631165, -84.425095, 10.694366, -99.088974, 10.764938, -115.4633, 10.833054, -131.26343, 10.92067, -151.5938, 11, -170, 10, -190, 10, -202)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("OverColor:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_hywda"]
+resource_name = "full"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:points")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [PackedVector2Array(10, 62, 9.82399, 54.60759, 9.660812, 47.75421, 9, 20, 10.283188, -3.6922302, 10.387848, -27.971497, 10.470581, -47.16568, 10.541122, -63.532654, 10.631165, -84.425095, 10.694366, -99.088974, 10.764938, -115.4633, 10.833054, -131.26343, 10.92067, -151.5938, 11, -170, 10, -190, 10, -202), PackedVector2Array(10, 62, 9.82399, 54.60759, 9.660812, 47.75421, 9, 20, 10.283188, -3.6922302, 10.387848, -27.971497, 10.470581, -47.16568, 10.541122, -63.532654, 10.631165, -84.425095, 10.694366, -99.088974, 10.764938, -115.4633, 10.833054, -131.26343, 10.92067, -151.5938, 11, -170, 10, -190, 10, -202)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OverColor:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.46000004, 0.46000004, 0.46000004, 0), Color(0.46000004, 0.46000004, 0.46000004, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qv3wo"]
+resource_name = "growing"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:points")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.49, 1, 1.51, 1.99, 2.5, 2.99, 3.5, 4.01, 4.51, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [PackedVector2Array(10, 63, 9.6, 60, 50, 46, 65, 28, 68, 5, 58, -15, 44, -33, 18, -34, 3, -25, -8, -14, -18, 16, -30, 32, -37, 44, -43, 47, -55, 57), PackedVector2Array(10, 63, 9.6, 60, 49, 35, 57, 17, 59, -2, 52, -20, 40, -36, 25, -46, 6, -48, -7, -34, -10, -17, -7, 2, -6, 18, -9, 36, -13, 56), PackedVector2Array(10, 62, 9.6, 60, 24, 35, 29, 18, 31, -4, 25, -22, 15, -39, -1, -49, -14, -52, -28, -46, -39, -35, -44, -19, -49, -2, -53, 16, -58, 37), PackedVector2Array(10, 62, 9.6, 60, 10, 14, 8, -2, 5, -19, 7, -38, 8, -55, 7, -72, -9, -77, -22, -72, -29, -58, -35, -41, -33, -24, -35, -7, -42, 11), PackedVector2Array(10, 62, 9.6, 60, 0, 14, -5, -4, -7, -16, -9, -33, -8, -52, -8, -71, 12, -86, 25, -84, 32, -60, 29, -42, 29, -27, 27, -12, 23, 1), PackedVector2Array(10, 62, 9.6, 60, -12, 32, -18, 15, -18, -7, -14, -25, -4, -43, 17, -64, 31, -79, 49, -82, 62, -74, 69, -61, 75, -45, 79, -30, 79, -14), PackedVector2Array(10, 62, 9.6, 60, -1, 30, -7, 10, -9, -6, -3, -26, 8, -40, 25, -55, 43, -68, 62, -79, 75, -80, 90, -81, 106, -79, 122, -74, 139, -64), PackedVector2Array(10, 62, 9.6, 60, 6, 23, 6, -1, 3, -27, 3, -50, 12, -66, 24, -79, 42, -92, 56, -99, 75, -102, 88, -102, 105, -105, 121, -105, 139, -103), PackedVector2Array(10, 62, 9.661, 60, 16, 18, 16, -12, 3, -34, -5, -54, -4, -77, -2, -95, 1, -108, 8, -122, 14, -140, 14, -157, 10, -172, 8, -195, 1, -215), PackedVector2Array(10, 62, 9.661, 60, 9, 20, 6, -6, 1, -28, 1, -49, 3, -70, 6, -86, 8, -102, 10.764938, -115.4633, 13, -132, 10.92067, -151.5938, 7, -170, 3, -189, -2, -206), PackedVector2Array(10, 62, 9.82399, 54.60759, 9.660812, 47.75421, 9, 20, 10.283188, -3.6922302, 10.387848, -27.971497, 10.470581, -47.16568, 10.541122, -63.532654, 10.631165, -84.425095, 10.694366, -99.088974, 10.764938, -115.4633, 10.833054, -131.26343, 10.92067, -151.5938, 11, -170, 10, -190, 10, -202)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.77, 0.6285767, 0.5467, 1), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("OverColor:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3.1, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.24, 0.19392, 0.16319999, 0.50980395), Color(0.27, 0.25704002, 0.24840002, 0.19215687), Color(0.46, 0.46, 0.46, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qv3wo"]
+_data = {
+&"RESET": SubResource("Animation_pvu6h"),
+&"full": SubResource("Animation_hywda"),
+&"growing": SubResource("Animation_qv3wo")
+}
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_6nvx3"]
+
+[node name="HyasSoulFlower" type="Area2D"]
+collision_layer = 18
+collision_mask = 18
+script = ExtResource("1_f88pd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(35, 55)
+shape = SubResource("RectangleShape2D_hywda")
+
+[node name="FlowerLine" type="Line2D" parent="."]
+unique_name_in_owner = true
+clip_children = 2
+points = PackedVector2Array(10, 62, 9.660812, 47.75421, 9, 20, 10.283188, -3.6922302, 10.387848, -27.971497, 10.470581, -47.16568, 10.541122, -63.532654, 10.631165, -84.425095, 10.694366, -99.088974, 10.764938, -115.4633, 10.833054, -131.26343, 10.92067, -151.5938, 11, -170, 10, -190, 10, -202)
+width = 128.0
+texture = ExtResource("2_jv3d8")
+texture_mode = 1
+
+[node name="FlowerAnimationPlayer" type="AnimationPlayer" parent="FlowerLine"]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_qv3wo")
+}
+
+[node name="OverColor" type="ColorRect" parent="FlowerLine"]
+material = SubResource("CanvasItemMaterial_6nvx3")
+offset_left = -136.0
+offset_top = -208.0
+offset_right = 182.0
+offset_bottom = 102.0

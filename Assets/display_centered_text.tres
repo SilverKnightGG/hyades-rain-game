@@ -1,0 +1,11 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bedcy3d7lcdod"]
+
+[ext_resource type="FontFile" uid="uid://1hwwmmo4f7io" path="res://Assets/Fonts/GFSNeohellenic.ttf" id="1_h5nai"]
+
+[resource]
+font = ExtResource("1_h5nai")
+font_size = 48
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 12
+shadow_color = Color(0, 0, 0, 0.6509804)

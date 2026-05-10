@@ -9,3 +9,7 @@ var down_speed: float = 0.0
 func _process(delta: float) -> void:
     down_speed += delta * ACCELERATION
     position.y += min(down_speed, TERMINAL_SPEED)
+
+
+func _on_die_timer_timeout() -> void:
+    queue_free()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dgx12se6gk3f3"]
+[gd_scene load_steps=34 format=3 uid="uid://dgx12se6gk3f3"]
 
 [ext_resource type="Script" uid="uid://ipdjum7mgw7n" path="res://Scenes/meadow.gd" id="1_a1lbd"]
 [ext_resource type="Texture2D" uid="uid://n3wpfksfpc2p" path="res://Assets/asphodel_field.png" id="2_4hovy"]
@@ -12,6 +12,23 @@
 [ext_resource type="Script" uid="uid://y3glbq2xf6jo" path="res://Scenes/water_pour_raycast.gd" id="9_x36ke"]
 [ext_resource type="Texture2D" uid="uid://cr73pcdnjnwbs" path="res://Assets/large_asphodel_flower.png" id="10_645v0"]
 [ext_resource type="Script" uid="uid://b1rfyvurghrpa" path="res://Scenes/hyas_soul_flower.gd" id="11_qv3wo"]
+
+[sub_resource type="Gradient" id="Gradient_qv3wo"]
+offsets = PackedFloat32Array(0, 0.122015916, 0.35278514, 0.602122, 0.7984085, 0.867374)
+colors = PackedColorArray(0, 0, 0, 0, 0.07307999, 0.061199997, 0.18, 0.47843137, 0.24233998, 0.22259998, 0.42, 0.92156863, 0.24839999, 0.31188, 0.46, 1, 0.18630001, 0.22257002, 0.27, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pvu6h"]
+gradient = SubResource("Gradient_qv3wo")
+fill_from = Vector2(1, 0)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="Gradient" id="Gradient_6nvx3"]
+offsets = PackedFloat32Array(0, 0.57029176, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_q8k3s"]
+gradient = SubResource("Gradient_6nvx3")
+fill_from = Vector2(1, 1)
 
 [sub_resource type="Gradient" id="Gradient_645v0"]
 colors = PackedColorArray(0, 0, 0, 1, 0.22745098, 0.22745098, 0.12156863, 1)
@@ -47,6 +64,45 @@ colors = PackedColorArray(1, 1, 1, 0.6862745, 1, 1, 1, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hywda"]
 size = Vector2(262, 24)
+
+[sub_resource type="Animation" id="Animation_pvu6h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:points")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedVector2Array(10, 62, 9.660812, 47.75421, 9, 20, 10.283188, -3.6922302, 10.387848, -27.971497, 10.470581, -47.16568, 10.541122, -63.532654, 10.631165, -84.425095, 10.694366, -99.088974, 10.764938, -115.4633, 10.833054, -131.26343, 10.92067, -151.5938, 11, -170, 10, -190, 10, -202)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("OverColor:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_hywda"]
 resource_name = "full"
@@ -128,45 +184,6 @@ tracks/2/keys = {
 "values": [Color(0.24, 0.19392, 0.16319999, 0.50980395), Color(0.27, 0.25704002, 0.24840002, 0.19215687), Color(0.46, 0.46, 0.46, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_pvu6h"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:points")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [PackedVector2Array(10, 62, 9.660812, 47.75421, 9, 20, 10.283188, -3.6922302, 10.387848, -27.971497, 10.470581, -47.16568, 10.541122, -63.532654, 10.631165, -84.425095, 10.694366, -99.088974, 10.764938, -115.4633, 10.833054, -131.26343, 10.92067, -151.5938, 11, -170, 10, -190, 10, -202)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:self_modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("OverColor:color")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qv3wo"]
 _data = {
 &"RESET": SubResource("Animation_pvu6h"),
@@ -180,8 +197,27 @@ _data = {
 size = Vector2(144, 124)
 
 [node name="AsphodelMeadow" type="Node2D"]
-position = Vector2(0, 119)
 script = ExtResource("1_a1lbd")
+
+[node name="SkyGradient" type="TextureRect" parent="."]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4588.0
+offset_top = -254.0
+offset_right = 5861.0
+offset_bottom = 824.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_pvu6h")
+
+[node name="UnderGradient" type="TextureRect" parent="."]
+offset_left = -4586.0
+offset_top = 823.0
+offset_right = 5861.0
+offset_bottom = 1653.0
+texture = SubResource("GradientTexture2D_q8k3s")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -252,6 +288,7 @@ texture = ExtResource("3_a2k08")
 
 [node name="Vase" type="RigidBody2D" parent="."]
 unique_name_in_owner = true
+z_index = 1
 position = Vector2(622, 408)
 mass = 0.9
 center_of_mass_mode = 1

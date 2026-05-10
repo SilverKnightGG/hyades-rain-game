@@ -44,3 +44,9 @@ split_scale = true
 scale_curve_x = SubResource("Curve_nv2n2")
 scale_curve_y = SubResource("Curve_2gt56")
 color_ramp = SubResource("Gradient_p52di")
+
+[node name="DieTimer" type="Timer" parent="."]
+wait_time = 4.5
+autostart = true
+
+[connection signal="timeout" from="DieTimer" to="." method="_on_die_timer_timeout"]
