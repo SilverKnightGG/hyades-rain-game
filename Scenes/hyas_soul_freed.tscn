@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://v3ta2jli3mva"]
+
+[ext_resource type="Texture2D" uid="uid://3fkj58i1eohy" path="res://Assets/hyas_soul.png" id="1_b11mh"]
+[ext_resource type="Script" uid="uid://6dfaj46f382j" path="res://Scenes/hyas_soul_freed.gd" id="1_pv1m7"]
+[ext_resource type="Texture2D" uid="uid://d3njayfoyhsju" path="res://Assets/water_particle.png" id="2_vwvxg"]
+
+[sub_resource type="Gradient" id="Gradient_vwvxg"]
+colors = PackedColorArray(0.22000003, 0.94799984, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pv1m7"]
+gradient = SubResource("Gradient_vwvxg")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.974359, 0.5)
+
+[node name="HyasSoul" type="Sprite2D"]
+self_modulate = Color(1.8247963, 1.8247963, 1.8247963, 0.6313726)
+rotation = 1.5707964
+texture = ExtResource("1_b11mh")
+offset = Vector2(-36.085, 0)
+script = ExtResource("1_pv1m7")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+unique_name_in_owner = true
+z_index = -2
+emitting = false
+amount = 256
+texture = ExtResource("2_vwvxg")
+emission_shape = 1
+emission_sphere_radius = 24.0
+gravity = Vector2(0, -198)
+scale_amount_min = 0.1
+scale_amount_max = 2.0
+color = Color(1, 1, 1, 0.047058824)
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+unique_name_in_owner = true
+emitting = false
+amount = 16
+texture = ExtResource("2_vwvxg")
+emission_shape = 1
+emission_sphere_radius = 16.0
+gravity = Vector2(0, -198)
+scale_amount_min = 0.1
+color = Color(0.8849023, 2.0325725, 2.0134447, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+unique_name_in_owner = true
+color = Color(0.56, 1, 0.9853333, 1)
+energy = 5.07
+blend_mode = 2
+texture = SubResource("GradientTexture2D_pv1m7")

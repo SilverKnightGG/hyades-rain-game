@@ -1,5 +1,7 @@
 extends Area2D
 
+const SOUL_SCENE: PackedScene = preload("uid://v3ta2jli3mva")
+
 enum State {PLAYING, WON}
 var state: State = State.PLAYING
 
@@ -42,7 +44,6 @@ func _win():
     state = State.WON
     %Vase.move_state = %Vase.MoveState.IMMOVEABLE
     win.emit()
-    prints("Won game")
 
 
 func _exit_tree():
