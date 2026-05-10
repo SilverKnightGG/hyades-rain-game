@@ -43,7 +43,7 @@ func _win():
     %FlowerAnimationPlayer.play("full")
     state = State.WON
     %Vase.move_state = %Vase.MoveState.IMMOVEABLE
-    win.emit()
+    Game.win()
 
 
 func _exit_tree():

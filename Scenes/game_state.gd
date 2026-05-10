@@ -15,6 +15,8 @@ func start_play(new_hyas_flower: Area2D):
 
 func win():
     print("win")
+    animator.play("Outro")
+    meadow.playing = false
     pass
 
 
